@@ -2,22 +2,26 @@ import React from "react";
 import Star from "../Assets/Star.png";
 
 export default function DynamicCards(props) {
+  console.log(props);
   return (
     <div className="cards">
-      <img className="card--image" src={props.img} />
+      {props.card.opensports === 0 && (
+        <div className="card--badge">SOLD OUT</div>
+      )}
+      <img className="card--image" src={props.card.coverImg} />
       <div className="attribute">
         {" "}
         <img className="star-lgo" src={Star} />
-        <span className="rating">{props.rating}</span>
-        <span> ({props.reviewCount}) • </span>
-        <span>{props.location}</span>
+        <span className="rating">{props.card.stats.rating}</span>
+        <span> ({props.card.stats.reviewCount}) • </span>
+        <span>{props.card.location}</span>
       </div>
-      <p className="card--title">{props.title}</p>
-      <p>{props.description}</p>
+      <p className="card--title">{props.card.title}</p>-{" "}
+      <p>{props.card.description}</p>
       <p>
-        <b>From ${props.price}</b>/person
+        <b>From ${props.card.price}</b>/person
       </p>
-      <p> openSpots :{props.opensports}</p>
+      <p> openSpots :{props.card.opensports}</p>
     </div>
   );
 }

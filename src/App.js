@@ -7,17 +7,7 @@ console.log(DyncardData);
 
 export default function App() {
   const dyncards = DyncardData.map((card) => (
-    <DynamicCards
-      key={card.id}
-      img={card.coverImg}
-      rating={card.stats.rating}
-      reviewCount={card.stats.reviewCount}
-      location={card.location}
-      title={card.title}
-      description={card.description}
-      price={card.price}
-      opensports={card.openSpots}
-    />
+    <DynamicCards key={card.id} card={card} />
   ));
   return (
     <>

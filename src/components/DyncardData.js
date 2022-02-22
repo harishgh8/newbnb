@@ -29,7 +29,7 @@ export default [
       reviewCount: 30,
     },
     location: "Europe",
-    openSpots: 27,
+    openSpots: 3,
   },
 
   {
